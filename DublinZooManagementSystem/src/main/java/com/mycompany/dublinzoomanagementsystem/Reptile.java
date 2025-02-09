@@ -30,7 +30,7 @@ public class Reptile extends Animal {
 
     @Override
     public String toString() {
-        return "Animal {" + "name=" + name + ", type =" + type +" habitat=" + habitat + ", dob=" + dob + ", weight=" + weight + ", species=" + species + ", comment=" + comment + '}';
+        return "Animal {" + "name=" + name + ", type =" + type +" habitat=" + habitat + ", dob=" + dob + ", weight=" + weight + "Kg, species=" + species + ", comment=" + comment + '}';
     }
     
     

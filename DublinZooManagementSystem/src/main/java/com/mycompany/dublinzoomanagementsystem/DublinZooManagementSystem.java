@@ -139,7 +139,76 @@ public class DublinZooManagementSystem {
                     }
                  
                     break;
+                case 3:
+                    System.out.println("Enter the habitat of animals you want to view."); // Prompt the user to enter a habitat to filter animals
+                    input.nextLine();// Clear the buffer
+                    String habitatToCheck = input.nextLine().toLowerCase();// Read the habitat and convert to lowercase for consistency
                     
+                    animalFound =false;//track if animals habitat were found
+                    
+                    // Check if the list is empty
+                    if(animalsSaved.isEmpty()){
+                        System.out.println("No animals registered on the system.");
+                    }else{
+                        // Loop through the animalsSaved list and check for the matching habitat
+                        for(int i =0; i< animalsSaved.size(); i++){
+                            if(animalsSaved.get(i).getHabitat().toLowerCase().equals(habitatToCheck)){
+                                System.out.println(animalsSaved.get(i).toString());
+                                animalFound = true;
+                            }
+                        }if (!animalFound){// If no animal of the specified habitat is found
+                            System.out.println("Animal of type: " +habitatToCheck + " is not present is the system.");
+                        }
+                    }
+                    break;
+                    
+                case 4:
+                    System.out.println("Enter the species of animals you want to view."); // Prompt the user to enter a species to filter animals
+                    input.nextLine();// Clear the buffer
+                    String speciesToCheck = input.nextLine().toLowerCase();// Read the species and convert to lowercase for consistency
+                    
+                    animalFound =false;//track if animal species were found
+                    
+                    // Check if the list is empty
+                    if(animalsSaved.isEmpty()){
+                        System.out.println("No animals registered on the system.");
+                    }else{
+                        // Loop through the animalsSaved list and check for the matching name
+                        for(int i =0; i< animalsSaved.size(); i++){
+                            if(animalsSaved.get(i).getSpecies().toLowerCase().equals(speciesToCheck)){
+                                System.out.println(animalsSaved.get(i).toString());
+                                animalFound = true;
+                            }
+                        }if (!animalFound){// If no animal of the specified species is found
+                            System.out.println("Animal with the name: " +speciesToCheck + " is not present is the system.");
+                        }
+                    }
+                    
+                    
+                break;    
+                case 5:
+                    System.out.println("Enter the name of animal you want to view."); // Prompt the user to enter a name to filter animals
+                    input.nextLine();// Clear the buffer
+                    String nameToCheck = input.nextLine().toLowerCase();// Read the name and convert to lowercase for consistency
+                    
+                    animalFound =false;//track if animal name were found
+                    
+                    // Check if the list is empty
+                    if(animalsSaved.isEmpty()){
+                        System.out.println("No animals registered on the system.");
+                    }else{
+                        // Loop through the animalsSaved list and check for the matching name
+                        for(int i =0; i< animalsSaved.size(); i++){
+                            if(animalsSaved.get(i).getName().toLowerCase().equals(nameToCheck)){
+                                System.out.println(animalsSaved.get(i).toString());
+                                animalFound = true;
+                            }
+                        }if (!animalFound){// If no animal of the specified habitat is found
+                            System.out.println("Animal with the name: " +nameToCheck + " is not present is the system.");
+                        }
+                    }
+                    
+                break;
                 
             }
      }while(userOption != 6 );
