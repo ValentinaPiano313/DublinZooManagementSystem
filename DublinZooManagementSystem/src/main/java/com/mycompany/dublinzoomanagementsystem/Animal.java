@@ -16,12 +16,12 @@ package com.mycompany.dublinzoomanagementsystem;
 public abstract class Animal {
     
     // Private fields to store the properties of an animal
-    private String name;      // Name of the animal
-    private String habitat;   // Habitat where the animal lives
-    private String dob;       // Date of birth of the animal
-    private double weight;    // Weight of the animal 
-    private String species;   // Species classification of the animal
-    private String comment;
+    public String name;      // Name of the animal
+    public String habitat;   // Habitat where the animal lives
+    public String dob;       // Date of birth of the animal
+    public double weight;    // Weight of the animal 
+    public String species;   // Species classification of the animal
+    public String comment;
     
     
     
@@ -103,7 +103,13 @@ public abstract class Animal {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" + "name=" + name + ", habitat=" + habitat + ", dob=" + dob + ", weight=" + weight + ", species=" + species + ", comment=" + comment + '}';
+    }
     
     
-    
-}
+    abstract String getType();
+   
+    }

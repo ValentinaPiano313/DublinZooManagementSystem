@@ -21,6 +21,7 @@ public class DublinZooManagementSystem {
       Scanner input = new Scanner(System.in);
       int userOption;
       List<Animal> animalsSaved = new ArrayList<>();  // List to store animals
+      boolean animalFound;//variable to track user 's view option in the menu
         
       do{    // Displaying the main menu to the user
             System.out.println("Welcome to the Dublin Zoo Management System");
@@ -114,6 +115,32 @@ public class DublinZooManagementSystem {
                         System.out.println("An error occurred while reading the file: " + ex.getMessage());
                     }
                     break;
+                 
+                case 2:
+                    System.out.println("Enter the type of animals you want to view."); // Prompt the user to enter a type to filter animals
+                    input.nextLine();// Clear the buffer
+                    String animalTypeToCheck = input.nextLine().toLowerCase();// Read the type and convert to lowercase for consistency
+                    
+                    animalFound =false;//track if animals type were found
+                    
+                    // Check if the list is empty
+                    if(animalsSaved.isEmpty()){
+                        System.out.println("No animals registered on the system.");
+                    }else{
+                        // Loop through the animalsSaved list and check for the matching type
+                        for(int i =0; i< animalsSaved.size(); i++){
+                            if(animalsSaved.get(i).getType().toLowerCase().equals(animalTypeToCheck)){
+                                System.out.println(animalsSaved.get(i).toString());
+                                animalFound = true;
+                            }
+                        }if (!animalFound){// If no animal of the specified type is found
+                            System.out.println("Animal of type: " +animalTypeToCheck + " is not present is the system.");
+                        }
+                    }
+                 
+                    break;
+                    
+                
             }
      }while(userOption != 6 );
         input.close();

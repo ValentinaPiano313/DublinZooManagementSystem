@@ -32,4 +32,11 @@ public class Fish extends Animal {
     public void setType(String inType) {
         this.type = inType;
     }
+
+    @Override
+    public String toString() {
+        return "Animal {" + "name=" + name + ", type =" + type +" habitat=" + habitat + ", dob=" + dob + ", weight=" + weight + ", species=" + species + ", comment=" + comment + '}';
+    }
+    
+    
 }
