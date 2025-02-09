@@ -21,6 +21,7 @@ public abstract class Animal {
     private String dob;       // Date of birth of the animal
     private double weight;    // Weight of the animal 
     private String species;   // Species classification of the animal
+    private String comment;
     
     
     
@@ -32,16 +33,18 @@ public abstract class Animal {
         this.dob = "dob";
         this.weight = 0.00;
         this.species = "species";
+        this.comment ="no comment";
         
     }
     
     //Parameterized constructor for the Animal class. Allows initialization of all fields with specified values.
-    public Animal(String name, String habitat, String dob, double weight, String species) {
+    public Animal(String name, String habitat, String dob, double weight, String species, String comment) {
         this.name = name;
         this.habitat = habitat;
         this.dob = dob;
         this.weight = weight;
         this.species = species;
+        this.comment = comment;
     }
     
     // method to get the date of birth of the animal.
@@ -92,5 +95,15 @@ public abstract class Animal {
     public void setWeight(double inWeight) {
         this.weight = inWeight;
     }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+    
+    
     
 }

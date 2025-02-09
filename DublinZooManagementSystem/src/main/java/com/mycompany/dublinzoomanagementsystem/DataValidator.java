@@ -10,7 +10,8 @@ package com.mycompany.dublinzoomanagementsystem;
  */
 public class DataValidator {
     
-    public boolean validateTypeSpeciesName(String line){
+    public String[] validateTypeSpeciesName(String line){
+
          // Split the line into parts using a comma as the delimiter
         String[] splittedLine = line.split(",");
 
@@ -25,47 +26,47 @@ public class DataValidator {
                 // Valid type, continue validation
             } else {
                 System.out.println("The type is invalid, please correct the file.");
-                return false;
+                return null;
             }
             // Validate species (should not be empty)
             if (species.isEmpty() || !species.matches("[a-zA-Z]+")) {
                 System.out.println("The species is invalid, it cannot be empty and can be text only.");
-                return false;
+                return null;
             }
 
             // Validate name (should not be empty)
             if (name.isEmpty()) {
                 System.out.println("The name is invalid, it cannot be empty.");
-                return false;
+                return null;
             }
-            return true;
+            return splittedLine;
         } else {
             // Incorrect number of parts
             System.out.println("The first line of the animal data must contain exactly three parts: type, species, name.");
-            return false;
+            return null;
         }
     }
     
     
-    public boolean validateHabitat(String line){
+    public String validateHabitat(String line){
         
-        String[] habitatList = {"polar", "tundra", "evergreen forests", "seasonal foresta", "grasslands", "desert", "tropical", "rain forest", "oceans"};
+        String[] habitatList = {"polar", "tundra", "forest", "grass", "desert", "tropical", "rain forest", "oceans","mountain"};
         String habitatToCheck = line.toLowerCase();
 
         if (habitatToCheck.isEmpty()) {
             System.out.println("The habitat is invalid, it cannot be empty.");
-            return false;
+            return null;
         } 
 
         for (int i = 0; i < habitatList.length; i++) {
             if (habitatList[i].equals(habitatToCheck)) {
-                return true; // Habitat is found
+                return habitatToCheck; // Habitat is found
             }
         }
 
         // If no match is found after the loop
         System.out.println("The habitat is invalid, please correct the file.");
-        return false;
+        return null;
 
     }
   

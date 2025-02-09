@@ -19,8 +19,8 @@ public class Fish extends Animal {
     private String type= "fish";
     
     //Constructor for the Fish class.Initializes the fields inherited from the Animal class
-    public Fish(String name, String habitat, String dob, double weight, String species) {
-        super(name, habitat, dob, weight, species);
+    public Fish(String name, String habitat, String dob, double weight, String species, String comment) {
+        super(name, habitat, dob, weight, species, comment);
     }
     
     //Gets the type of the fish

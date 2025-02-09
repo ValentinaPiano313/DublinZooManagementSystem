@@ -14,8 +14,8 @@ public class Reptile extends Animal {
     private String type= "reptile";
     
     //Constructor for the Reptile class.Initializes the fields inherited from the Animal class
-    public Reptile(String name, String habitat, String dob, double weight, String species) {
-        super(name, habitat, dob, weight, species);
+    public Reptile(String name, String habitat, String dob, double weight, String species, String comment) {
+        super(name, habitat, dob, weight, species, comment);
     }
     
     //Gets the type of the reptile

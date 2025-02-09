@@ -14,8 +14,8 @@ public class Bird extends Animal {
     private String type= "bird";
     
     //Constructor for the Bird class.Initializes the fields inherited from the Animal class
-    public Bird(String name, String habitat, String dob, double weight, String species) {
-        super(name, habitat, dob, weight, species);
+    public Bird(String name, String habitat, String dob, double weight, String species,String comment) {
+        super(name, habitat, dob, weight, species, comment);
     }
     
     //Gets the type of the bird
